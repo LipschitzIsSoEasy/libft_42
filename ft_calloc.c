@@ -16,6 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 		str[i] = 0;
 		i++;
 	}
+	str[i] = '\0';
 	return ((void *)str);
 }
 

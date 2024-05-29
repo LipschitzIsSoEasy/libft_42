@@ -1,20 +1,20 @@
 #include "libft.h"
 
-size_t  ft_strlen(const char *s)
-{
-    size_t i;
+// size_t  ft_strlen(const char *s)
+// {
+//     size_t i;
 
-    if (s != NULL)
-    {
-        i = 0;
-        while (s[i] != 0)
-        {
-            i++;
-        }
-        return (i);
-    }
-    return (0);
-}
+//     if (s != NULL)
+//     {
+//         i = 0;
+//         while (s[i] != 0)
+//         {
+//             i++;
+//         }
+//         return (i);
+//     }
+//     return (0);
+// }
 
 char	*ft_strdup(const char *s1)
 {
