@@ -20,33 +20,53 @@ size_t	ft_countnbr(int n)
 	return (count_nb);
 }
 
+void	ft_putnbr_decimal(int n, char *result, size_t i)
+{
+	long	l;
+
+	l = n;
+	if (l < 0)
+	{
+		result[0] = ('-');
+		l = -l;
+	}
+	if (l % 10 != l)
+	{
+		ft_putnbr_decimal(l / 10, result, i - 1);
+	}
+	result[i] = l % 10 + 48;
+}
+
 char	*ft_itoa(int n)
 {
 	char	*result;
 	size_t	true_len;
-	size_t	i;
-	long	l;
 
-	l = n;
 	true_len = ft_countnbr(n);
 	result = (char *)malloc(sizeof(char) * (true_len + 1));
-	if (result = NULL)
+	if (result == NULL)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (i < true_len)
-	{
-		
-		i++;
-	}
-
-	return (NULL);
+	ft_putnbr_decimal(n, result, true_len - 1);
+	result[true_len] = '\0';
+	return (result);
 
 }
 
+/*
 int	main(void)
 {
 	printf("%zu\n", ft_countnbr(-91234));
 	return (0);
 }
+*/
+
+// int main(void)
+// {
+//     char *str = ft_itoa(-91234);
+// 	printf("%zu\n", ft_countnbr(-91234));
+//     printf("%s\n", str);
+//     free(str);  // Don't forget to free the allocated memory
+//     return (0);
+// }

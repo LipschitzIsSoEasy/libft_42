@@ -36,18 +36,19 @@ char    *ft_strchr(const char *s, int c)
 {
     int i;
     int len;
-    unsigned char unsigned_c;
+    //unsigned char unsigned_c;
 
     if (s == NULL)
     {
         return (NULL);
     }
     len = ft_strlen(s);
-    unsigned_c = (unsigned char)c;
+    //unsigned_c = (unsigned char)c;
     i = 0;
     while (i <= len)
     {
-        if ((unsigned char)s[i] == unsigned_c)
+        //if ((unsigned char)s[i] == unsigned_c)
+        if (s[i] == (char)c)
         {
             return ((char *)(s + i));
         }
