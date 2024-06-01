@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/01 17:57:36 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/01 17:58:18 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	count_words(char const *s, char c)
@@ -28,6 +40,7 @@ size_t	count_words(char const *s, char c)
 	}
 	return (nb);
 }
+
 char	*ft_strndup(const char *s1, size_t n)
 {
 	size_t	i;
@@ -81,10 +94,9 @@ void	ft_allocation(char **new_str, char const *s, char c)
 	}
 	new_str[j] = NULL;
 	//return (new_str);
-	
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	true_len;
 	char	**new_str;

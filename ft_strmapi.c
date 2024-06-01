@@ -1,20 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/01 17:59:32 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/01 17:59:49 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-// size_t  ft_strlen(const char *s)
-// {
-//     size_t i;
-
-//     if (s != NULL)
-//     {
-//         i = 0;
-//         while (s[i] != 0)
-//         {
-//             i++;
-//         }
-//         return (i);
-//     }
-//     return (0);
-// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -37,7 +33,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_str[i] = '\0';
 	return (new_str);
 }
-
 // char	fff(unsigned int	i, char c)
 // {
 // 	char	r;
@@ -45,7 +40,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	r = c + 1;
 // 	return (r);
 // }
-
 // int	main(void)
 // {
 // 	char const s[] = "abcde";

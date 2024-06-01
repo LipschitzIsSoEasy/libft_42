@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/01 17:58:40 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/01 17:59:18 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_countnbr(int n)
@@ -51,9 +63,7 @@ char	*ft_itoa(int n)
 	ft_putnbr_decimal(n, result, true_len - 1);
 	result[true_len] = '\0';
 	return (result);
-
 }
-
 /*
 int	main(void)
 {
@@ -61,7 +71,6 @@ int	main(void)
 	return (0);
 }
 */
-
 // int main(void)
 // {
 //     char *str = ft_itoa(-91234);

@@ -1,22 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/01 17:55:32 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/01 17:56:48 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-// size_t  ft_strlen(const char *s)
-// {
-//     size_t i;
-
-//     if (s != NULL)
-//     {
-//         i = 0;
-//         while (s[i] != 0)
-//         {
-//             i++;
-//         }
-//         return (i);
-//     }
-//     return (0);
-// }
-
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*new_str;
@@ -28,12 +24,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	len = len_s1 + len_s2;
-	if (len == 0)
-	{
-		return (NULL);
-	}
 	new_str = (char *)malloc(sizeof(char) * (len + 1));
-	if (new_str ==NULL)
+	if (new_str == NULL)
 	{
 		return (NULL);
 	}
@@ -47,7 +39,6 @@ char *ft_strjoin(char const *s1, char const *s2)
 	while (j < len_s2)
 	{
 		new_str[i] = s2[j];
-		//new_str[i] = s2[len_s2 - (len - i)];
 		i++;
 		j++;
 	}

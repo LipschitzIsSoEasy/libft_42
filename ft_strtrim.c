@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/01 17:57:26 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/01 17:57:29 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // size_t  ft_strlen(const char *s)
@@ -51,8 +63,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	start = i;
+	if (start >= len_s1)
+		return (ft_strdup(""));
 	j = len_s1 - 1;
-	while (j >= 0 && isdelete(set, s1[j]))
+	while (isdelete(set, s1[j]))
 	{
 		j--;
 	}
