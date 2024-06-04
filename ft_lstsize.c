@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/04 17:45:16 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/04 17:45:44 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
@@ -12,7 +24,6 @@ int ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
 // int	main(void)
 // {
 // 	int	len;
@@ -21,7 +32,6 @@ int ft_lstsize(t_list *lst)
 // 	t_list	*n2;
 // 	t_list	*n1;
 // 	t_list	*lst;
-
 // 	a = (int *)malloc(sizeof(int));
 // 	if (a == NULL)
 // 	{
@@ -52,14 +62,11 @@ int ft_lstsize(t_list *lst)
 // 	lst = NULL;
 // 	ft_lstadd_front(&lst, n2);
 // 	ft_lstadd_front(&lst, n1);
-
 // 	len = ft_lstsize(lst);
 // 	printf("%d\n", len);
-
 // 	free(a);
 // 	free(b);
 // 	free(n1);
 // 	free(n2);
-
 // 	return (0);
 // }

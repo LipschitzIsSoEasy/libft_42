@@ -38,9 +38,9 @@ SRCS =	ft_atoi.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
 		ft_lstnew.c\
-		# ft_memmove.c\
-		# ft_strlcat.c \
-		# ft_strlcpy.c \
+		ft_memmove.c\
+		ft_strlcpy.c \
+		ft_strlcat.c \
 
 OBJS = $(SRCS:.c=.o)
 

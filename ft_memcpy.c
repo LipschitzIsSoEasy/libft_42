@@ -6,7 +6,7 @@
 /*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:41:28 by mtian             #+#    #+#             */
-/*   Updated: 2024/06/01 17:41:56 by mtian            ###   ########.fr       */
+/*   Updated: 2024/06/04 14:26:06 by mtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*pointer_dst;
 	unsigned char	*pointer_src;
 
-	if (n == 0)
-	{
-		return (dst);
-	}
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 	{
 		return (NULL);
 	}

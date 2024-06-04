@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/04 17:46:23 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/04 17:48:01 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
@@ -12,22 +24,18 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-
 //un peu corriger par gpt
-//juste oublie b = 'a';
-
+//juste oublie *b = 'a';
 // int main(void)
 // {
 //     int *a;
 //     char *b;
-
 //     a = (int *)malloc(sizeof(int));
 //     if (a == NULL)
 //     {
 //         return (1);
 //     }
 //     *a = 4;
-
 //     b = (char *)malloc(sizeof(char));
 //     if (b == NULL)
 //     {
@@ -63,7 +71,8 @@ t_list	*ft_lstlast(t_list *lst)
 //     t_list *last_node = ft_lstlast(lst);
 //     if (last_node != NULL)
 //     {
-//         printf("The content of the last node is: %s\n", (char *)last_node->content);
+//         printf("The content of the last node is: %s\n",
+//         (char *)last_node->content);
 //     }
 //     else
 //     {
@@ -115,7 +124,7 @@ t_list	*ft_lstlast(t_list *lst)
 // 		return (1);
 // 	}
 
-// 	t_list	*lst;
+// 	t_list/a/	*lst;
 // 	lst = NULL;
 // 	ft_lstadd_front(&lst, n2);
 // 	ft_lstadd_front(&lst, n1);

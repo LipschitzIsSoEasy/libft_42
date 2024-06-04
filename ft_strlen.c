@@ -6,7 +6,7 @@
 /*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:32:23 by mtian             #+#    #+#             */
-/*   Updated: 2024/06/01 17:34:04 by mtian            ###   ########.fr       */
+/*   Updated: 2024/06/04 18:02:27 by mtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,12 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
-	if (s != NULL)
+	i = 0;
+	while (s[i] != 0)
 	{
-		i = 0;
-		while (s[i] != 0)
-		{
-			i++;
-		}
-		return (i);
+		i++;
 	}
-	return (0);
+	return (i);
 }
 // int main(void)
 // {

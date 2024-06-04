@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/04 17:26:06 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/04 17:27:06 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -74,7 +86,6 @@ int	main(int ac, char **av)
 // 	}
 // 	return (dst);
 // }
-
 // int	main(void)
 // {
 // 	char parametre1[] = "1234567";
@@ -82,7 +93,6 @@ int	main(int ac, char **av)
 // 	char src1[] = "abcde";
 // 	char src2[] = "abcde";
 // 	int	n;
-
 // 	n = 3;
 // 	memcpy(parametre1, src1, n);
 // 	ft_memcpy(parametre2, src2, n);

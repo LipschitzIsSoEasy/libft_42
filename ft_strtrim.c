@@ -6,27 +6,11 @@
 /*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:57:26 by mtian             #+#    #+#             */
-/*   Updated: 2024/06/01 17:57:29 by mtian            ###   ########.fr       */
+/*   Updated: 2024/06/04 18:05:38 by mtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// size_t  ft_strlen(const char *s)
-// {
-//     size_t i;
-
-//     if (s != NULL)
-//     {
-//         i = 0;
-//         while (s[i] != 0)
-//         {
-//             i++;
-//         }
-//         return (i);
-//     }
-//     return (0);
-// }
 
 int	isdelete(char const *set, char c)
 {
@@ -46,17 +30,16 @@ int	isdelete(char const *set, char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *result;
+	char	*result;
 	size_t	true_len;
 	size_t	len_s1;
 	size_t	i;
 	size_t	j;
 	size_t	start;
-	//size_t	end;
 
 	len_s1 = ft_strlen(s1);
-	start = 0;
 	true_len = 0;
+	start = 0;
 	i = 0;
 	while (s1[i] != '\0' && isdelete(set, s1[i]))
 	{
@@ -70,7 +53,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		j--;
 	}
-	//end = j;
 	true_len = j - i + 1;
 	result = (char *)malloc(sizeof(char) * (true_len + 1));
 	if (result == NULL)
@@ -86,7 +68,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result[i] = '\0';
 	return (result);
 }
-
 // int	main(void)
 // {
 // 	char const s1[] = "(123456 \n";

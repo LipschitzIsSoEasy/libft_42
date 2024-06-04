@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/04 17:59:12 by mtian             #+#    #+#             */
+/*   Updated: 2024/06/04 18:00:34 by mtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char *str;
-	size_t i;
-	size_t	len;
+	unsigned char	*str;
+	size_t			i;
+	size_t			len;
 
-	if (count != 0 && size > SIZE_MAX / count)
+	if (count != 0 && size > INT_MAX / count)
 	{
 		return (NULL);
 	}
@@ -42,7 +54,8 @@ void	*ft_calloc(size_t count, size_t size)
 // 	size_t	count;
 
 // 	count = 5;
-// 	printf(">%s<\n>%s<\n", (char *)calloc(5, sizeof(char)), (char *)ft_calloc(5, sizeof(char)));
+// 	printf(">%s<\n>%s<\n", (char *)calloc(5, sizeof(char)),
+// 	(char *)ft_calloc(5, sizeof(char)));
 // 	//char *t = (char *)ft_calloc(5, sizeof(char));
 // 	//t[10] = 'v';
 // 	//printf("%c\n", t[10]);
