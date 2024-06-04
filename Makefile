@@ -37,8 +37,26 @@ SRCS =	ft_atoi.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
+		ft_lstnew.c\
+		# ft_memmove.c\
+		# ft_strlcat.c \
+		# ft_strlcpy.c \
 
 OBJS = $(SRCS:.c=.o)
+
+# List of bonus sourcs files
+SRCSBONUS =	ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
+
+# Objet files for bonus source files
+OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 
 # Default rule
@@ -47,6 +65,10 @@ all: $(NAME)
 # Create the library
 $(NAME): $(OBJS)
 	ar rcs $@ $^
+
+# Rules to add bonus to the lib
+bonus: ${OBJS} ${OBJSBONUS}
+	ar -rcs ${NAME} ${OBJS} ${OBJSBONUS}
 
 # Compile source files into object files
 %.o: %.c

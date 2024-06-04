@@ -4,21 +4,38 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char *str;
 	size_t i;
+	size_t	len;
 
-	str = (unsigned char *)malloc(count * size);
+	if (count != 0 && size > SIZE_MAX / count)
+	{
+		return (NULL);
+	}
+	len = count * size;
+	str = (unsigned char *)malloc(len);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 	i = 0;
-	while (i < count)
+	while (i < len)
 	{
 		str[i] = 0;
 		i++;
 	}
-	str[i] = '\0';
 	return ((void *)str);
 }
+// void	*ft_calloc(size_t nmemb, size_t size)
+// {
+// 	void	*mem;
+
+// 	if (nmemb > SIZE_MAX / size)
+// 		return (NULL);
+// 	mem = malloc (nmemb * size);
+// 	if (!mem)
+// 		return (NULL);
+// 	ft_bzero(mem, (nmemb * size));
+// 	return (mem);
+// }
 
 // int	main(void)
 // {
