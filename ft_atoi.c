@@ -20,8 +20,6 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	signe = 1;
-	if (str == NULL)
-		return (result);
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
@@ -44,8 +42,11 @@ int	main(void)
 	char str1[] = "     1234f33";
 	char str2[] = " ";
 
-	printf(">%d<", atoi(str1));
-	printf(">%d<", ft_atoi(str1));
+	printf(">%d<", atoi((void *)0));
+	printf(">%d<", ft_atoi((void *)0));
+	
+	// printf(">%d<", atoi("+ "));
+	// printf(">%d<", ft_atoi("+ "));
 	return (0);
 }
 */

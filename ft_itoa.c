@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_countnbr(int n)
+static size_t	ft_countnbr(int n)
 {
 	long	l;
 	size_t	count_nb;
@@ -32,7 +32,7 @@ size_t	ft_countnbr(int n)
 	return (count_nb);
 }
 
-void	ft_putnbr_decimal(int n, char *result, size_t i)
+static void	ft_putnbr_decimal(int n, char *result, size_t i)
 {
 	long	l;
 

@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (little[0] == '0')
+	if (little[0] == '\0')
 	{
 		return ((char *)big);
 	}
@@ -38,17 +38,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	char parametre1[] = "fgdf";
+    char parametre2[] = "";
+    int c;
 
-// int	main(void)
-// {
-// 	char parametre1[] = "1234567";
-//     char parametre2[] = "234";
-// 	char src1[] = "abcde";
-// 	char src2[] = "";
-//     int c;
-
-//     c = 12;
-// 	printf("%s\n%s\n",(char *)(strnstr((void *)parametre1,
-// 	parametre2, c)), (char *)(ft_strnstr((void *)parametre1, parametre2, c)));
-// 	return (0);
-// }
+    c = 0;
+	printf("%s====\n%s\n",(char *)(strnstr((void *)parametre1, parametre2, c)),
+	(char *)(ft_strnstr((void *)parametre1, parametre2, c)));
+	return (0);
+}
+*/

@@ -22,16 +22,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	src = (char *)s;
 	i = 0;
 	true_len = 0;
-	while (s[i] != '\0' && i < len)
-	{
+	while (s[i] != '\0' && i < len && start < ft_strlen(s))
 		i++;
-	}
 	true_len = i;
 	substr = (char *)malloc(sizeof(char) * (true_len + 1));
 	if (substr == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (s[i] != '\0' && i < true_len)
 	{
@@ -41,11 +37,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-// int	main(void)
-// {
-// 	char const s[] = "01234567";
-// 	unsigned int start = 2;
-// 	size_t len = 4;
-// 	printf("%s\n", ft_substr(s, start, len));
-// 	return (0);
-// }
+/*
+int	main(void)
+{
+	char const s[] = "0123456789";
+	unsigned int start = 9;
+	size_t len = 10;
+	char	*substr = ft_substr(s, start, len);
+	printf(">%s<\n", substr);
+	free(substr);
+	//free(s);
+	return (0);
+}
+*/

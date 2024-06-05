@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	verificateur;
@@ -25,7 +25,6 @@ size_t	count_words(char const *s, char c)
 		verificateur = 0;
 		while (s[i] == c)
 		{
-			//verificateur++;
 			i++;
 		}
 		while (s[i] != c && s[i] != '\0')
@@ -41,7 +40,7 @@ size_t	count_words(char const *s, char c)
 	return (nb);
 }
 
-char	*ft_strndup(const char *s1, size_t n)
+static char	*ft_strndup(const char *s1, size_t n)
 {
 	size_t	i;
 	char	*dest;
@@ -65,35 +64,46 @@ char	*ft_strndup(const char *s1, size_t n)
 	return (dest);
 }
 
-void	ft_allocation(char **new_str, char const *s, char c)
+static char	**ft_free_all_tab(char **tab)
+{
+	size_t	i;
+
+	i = 0;
+	while (tab != NULL && tab[i] != NULL)
+	{
+		free(tab[i]);
+		++i;
+	}
+	free(tab);
+	return (NULL);
+}
+
+static void	ft_allocation(char **new_str, char const *s, char c, size_t start)
 {
 	size_t	i;
 	size_t	j;
-	size_t	start;
 
 	i = 0;
 	j = 0;
-	start = 0;
 	while (s[i] != '\0')
 	{
-		//j = 0;
 		while (s[i] == c)
-		{
 			i++;
-		}
 		start = i;
 		while (s[i] != c && s[i] != '\0')
-		{
 			i++;
-		}
 		if (i > start)
 		{
 			*(new_str + j) = ft_strndup(s + start, i - start);
+			if (new_str[j] == NULL)
+			{
+				ft_free_all_tab(new_str);
+				return ;
+			}
 			j++;
 		}
 	}
 	new_str[j] = NULL;
-	//return (new_str);
 }
 
 char	**ft_split(char const *s, char c)
@@ -111,13 +121,12 @@ char	**ft_split(char const *s, char c)
 		}
 		new_str[0] = NULL;
 		return (new_str);
-		//return (NULL); //??????
 	}
 	new_str = (char **)malloc(sizeof(char *) * (true_len + 1));
 	if (new_str == NULL)
 	{
 		return (NULL);
 	}
-	ft_allocation(new_str, s, c);
+	ft_allocation(new_str, s, c, 0);
 	return (new_str);
 }

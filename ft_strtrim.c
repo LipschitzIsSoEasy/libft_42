@@ -12,6 +12,23 @@
 
 #include "libft.h"
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	len;
+	size_t	i;
+
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	i = 0;
+	while (*(s1 + i) != '\0' && ft_strchr(set, *(s1 + i)))
+		i++;
+	len = ft_strlen(s1 + i);
+	while (len > 0 && ft_strchr(set, s1[i + len - 1]))
+		len--;
+	return (ft_substr(s1, i, len));
+}
+
+/*
 int	isdelete(char const *set, char c)
 {
 	size_t	i;
@@ -68,6 +85,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result[i] = '\0';
 	return (result);
 }
+*/
 // int	main(void)
 // {
 // 	char const s1[] = "(123456 \n";
