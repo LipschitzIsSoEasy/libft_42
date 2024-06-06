@@ -45,10 +45,10 @@ static char	*ft_strndup(const char *s1, size_t n)
 	size_t	i;
 	char	*dest;
 
-	if (n <= 0)
-	{
-		return (NULL);
-	}
+	// if (n <= 0)
+	// {
+	// 	return (NULL);
+	// }
 	dest = (char *)malloc(sizeof(char) * (n + 1));
 	if (dest == NULL)
 	{
@@ -56,26 +56,31 @@ static char	*ft_strndup(const char *s1, size_t n)
 	}
 	i = 0;
 	while (s1[i] != '\0' && i < n)
+	//while (i < n)
 	{
 		dest[i] = s1[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i] = 0;
 	return (dest);
 }
 
-static char	**ft_free_all_tab(char **tab)
+//#include <stdio.h>
+static void	ft_free_all_tab(char **tab)
 {
 	size_t	i;
 
 	i = 0;
 	while (tab != NULL && tab[i] != NULL)
+	//while (i > 0)
 	{
+		//printf("tab[%zu]\n", i);
+		//printf("tab[%zu] : %s\n", i, tab[i]);
+		//i--;
 		free(tab[i]);
-		++i;
+		i++;
 	}
 	free(tab);
-	return (NULL);
 }
 
 static void	ft_allocation(char **new_str, char const *s, char c, size_t start)
@@ -94,7 +99,11 @@ static void	ft_allocation(char **new_str, char const *s, char c, size_t start)
 			i++;
 		if (i > start)
 		{
-			*(new_str + j) = ft_strndup(s + start, i - start);
+			if (j == 3)
+				new_str[j] = NULL;
+			else
+				*(new_str + j) = ft_strndup(s + start, i - start);
+			//printf("strdup : %s\n", new_str[j]);
 			if (new_str[j] == NULL)
 			{
 				ft_free_all_tab(new_str);
@@ -130,3 +139,21 @@ char	**ft_split(char const *s, char c)
 	ft_allocation(new_str, s, c, 0);
 	return (new_str);
 }
+
+// int	main(int argc, char **argv)
+// {
+// 	char **tab = ft_split(argv[1], *argv[2]);
+// 	size_t	i = 0;
+	
+// 	if (!tab)
+// 		return 1;
+// 	while (tab[i])
+// 	{
+// 		ft_putstr_fd(tab[i], 1);
+// 		ft_putchar_fd('\n', 1);
+// 		free(tab[i]);
+// 		i++;
+// 	}
+// 	free(tab);
+// 	argc++;
+// }

@@ -6,7 +6,7 @@
 /*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:40:07 by mtian             #+#    #+#             */
-/*   Updated: 2024/06/04 17:40:19 by mtian            ###   ########.fr       */
+/*   Updated: 2024/06/06 16:16:48 by mtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	src = (char *)s;
 	i = 0;
 	true_len = 0;
-	while (s[i] != '\0' && i < len && start < ft_strlen(s))
+	while (s[i] != '\0' && i < len && start + i < ft_strlen(s))
 		i++;
 	true_len = i;
 	substr = (char *)malloc(sizeof(char) * (true_len + 1));
