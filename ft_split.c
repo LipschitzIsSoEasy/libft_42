@@ -6,7 +6,7 @@
 /*   By: mtian <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:57:36 by mtian             #+#    #+#             */
-/*   Updated: 2024/06/01 17:58:18 by mtian            ###   ########.fr       */
+/*   Updated: 2024/06/07 10:59:02 by mtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ static char	*ft_strndup(const char *s1, size_t n)
 	size_t	i;
 	char	*dest;
 
-	// if (n <= 0)
-	// {
-	// 	return (NULL);
-	// }
 	dest = (char *)malloc(sizeof(char) * (n + 1));
 	if (dest == NULL)
 	{
@@ -56,34 +52,28 @@ static char	*ft_strndup(const char *s1, size_t n)
 	}
 	i = 0;
 	while (s1[i] != '\0' && i < n)
-	//while (i < n)
 	{
 		dest[i] = s1[i];
 		i++;
 	}
-	dest[i] = 0;
+	dest[i] = '\0';
 	return (dest);
 }
 
-//#include <stdio.h>
 static void	ft_free_all_tab(char **tab)
 {
 	size_t	i;
 
 	i = 0;
 	while (tab != NULL && tab[i] != NULL)
-	//while (i > 0)
 	{
-		//printf("tab[%zu]\n", i);
-		//printf("tab[%zu] : %s\n", i, tab[i]);
-		//i--;
 		free(tab[i]);
 		i++;
 	}
 	free(tab);
 }
 
-static void	ft_allocation(char **new_str, char const *s, char c, size_t start)
+static int	ft_allocation(char **new_str, char const *s, char c, size_t start)
 {
 	size_t	i;
 	size_t	j;
@@ -99,20 +89,17 @@ static void	ft_allocation(char **new_str, char const *s, char c, size_t start)
 			i++;
 		if (i > start)
 		{
-			if (j == 3)
-				new_str[j] = NULL;
-			else
-				*(new_str + j) = ft_strndup(s + start, i - start);
-			//printf("strdup : %s\n", new_str[j]);
+			*(new_str + j) = ft_strndup(s + start, i - start);
 			if (new_str[j] == NULL)
 			{
 				ft_free_all_tab(new_str);
-				return ;
+				return (1);
 			}
 			j++;
 		}
 	}
 	new_str[j] = NULL;
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -133,10 +120,9 @@ char	**ft_split(char const *s, char c)
 	}
 	new_str = (char **)malloc(sizeof(char *) * (true_len + 1));
 	if (new_str == NULL)
-	{
 		return (NULL);
-	}
-	ft_allocation(new_str, s, c, 0);
+	if (ft_allocation(new_str, s, c, 0) != 0)
+		return (NULL);
 	return (new_str);
 }
 
@@ -144,7 +130,6 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char **tab = ft_split(argv[1], *argv[2]);
 // 	size_t	i = 0;
-	
 // 	if (!tab)
 // 		return 1;
 // 	while (tab[i])
